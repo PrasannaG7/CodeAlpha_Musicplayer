@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="playlist">
+        <div class="brand">Musiq player</div>
+        <div class="playlist-search">
+          <input type="search" id="search" placeholder="Search songs..." />
+        </div>
+        <ul id="playlist"></ul>
+      </aside>
+
+      <main class="player-panel">
+        <div class="player-card">
+          <div class="cover-wrap loading" id="loading">
+            <img id="cover" src="images/cover1.jpg" alt="cover" />
+            <div class="equalizer" id="eq">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <div class="track-info">
+            <h2 id="title">Title</h2>
+            <p id="artist">Artist</p>
+          </div>
+
+          <div class="progress-area">
+            <div class="time left" id="current">0:00</div>
+            <div class="progress" id="progress-container" aria-label="progress">
+              <div class="progress-bar" id="progress"></div>
+            </div>
+            <div class="time right" id="duration">0:00</div>
+          </div>
+
+          <div class="controls">
+            <div class="left-controls">
+              <button id="shuffle" class="btn" title="Shuffle">🔀</button>
+              <button id="prev" class="btn" title="Previous">⏮️</button>
+            </div>
+
+            <div class="play-controls">
+              <button id="play" class="btn play" aria-pressed="false" title="Play/Pause">▶️</button>
+            </div>
+
+            <div class="right-controls">
+              <button id="next" class="btn" title="Next">⏭️</button>
+              <button id="repeat" class="btn" title="Repeat">🔁</button>
+            </div>
+          </div>
+
+          <div class="volume-row">
+            <button id="mute" class="btn" title="Mute">🔊</button>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" />
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <audio id="audio" preload="metadata"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
